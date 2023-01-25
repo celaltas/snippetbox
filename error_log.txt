@@ -1,20 +1,24 @@
-ERROR	2023/01/25 16:40:23 handlers.go:24: open ./ui/html/home.page.tmpl: no such file or directory
-ERROR	2023/01/25 16:40:23 helpers.go:14: open ./ui/html/home.page.tmpl: no such file or directory
-goroutine 6 [running]:
+ERROR	2023/01/25 23:57:38 handlers.go:63: LastInsertId is not supported by this driver
+ERROR	2023/01/25 23:57:38 helpers.go:14: LastInsertId is not supported by this driver
+goroutine 18 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000012cd0, {0x7e9498, 0xc0001621c0}, {0x7e7260?, 0xc0001092c0?})
+main.(*application).serverError(0xc0000a21b0, {0x866d20, 0xc0000bc0e0}, {0x864740?, 0xc000202010?})
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:13 +0x66
-main.(*application).home(0xc000012cd0, {0x7e9498?, 0xc0001621c0}, 0x4e3389?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:26 +0x269
-net/http.HandlerFunc.ServeHTTP(0x7f4528e71ea8?, {0x7e9498?, 0xc0001621c0?}, 0x40ece5?)
+main.(*application).createSnippet(0xc0000a21b0, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:64 +0x305
+net/http.HandlerFunc.ServeHTTP(0x7f8421c4adb8?, {0x866d20?, 0xc0000bc0e0?}, 0x40ef45?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e9498, 0xc0001621c0}, 0xc00017e000)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
 	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc0001091a0?}, {0x7e9498, 0xc0001621c0}, 0xc00017e000)
+net/http.serverHandler.ServeHTTP({0xc0000a8330?}, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
 	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000118e60, {0x7e96f0, 0xc0001090b0})
+net/http.(*conn).serve(0xc0000b4140, {0x867038, 0xc0000a8240})
 	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3071 +0x4db
+
+1 +0x4db
+
+
 
