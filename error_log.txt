@@ -1,24 +1,51 @@
-ERROR	2023/01/25 23:57:38 handlers.go:63: LastInsertId is not supported by this driver
-ERROR	2023/01/25 23:57:38 helpers.go:14: LastInsertId is not supported by this driver
-goroutine 18 [running]:
+ERROR	2023/01/26 22:58:23 helpers.go:11: the template named 'showSnippet.page.tmpl' does not exist
+goroutine 24 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000a21b0, {0x866d20, 0xc0000bc0e0}, {0x864740?, 0xc000202010?})
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:13 +0x66
-main.(*application).createSnippet(0xc0000a21b0, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:64 +0x305
-net/http.HandlerFunc.ServeHTTP(0x7f8421c4adb8?, {0x866d20?, 0xc0000bc0e0?}, 0x40ef45?)
+main.(*application).serverError(0xc0000b8280, {0x868360, 0xc0000d42a0}, {0x865d80?, 0xc000013040?})
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:10 +0x66
+main.(*application).render(0xc0000b8280, {0x868360?, 0xc0000d42a0}, 0x2?, {0x7d1ec8, 0x15}, 0x0?)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:26 +0x125
+main.(*application).showSnippet(0xc0000b8280, {0x868360, 0xc0000d42a0}, 0xc000258000)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:39 +0x18e
+net/http.HandlerFunc.ServeHTTP(0x7f1813265db8?, {0x868360?, 0xc0000d42a0?}, 0x40ef45?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
+net/http.(*ServeMux).ServeHTTP(0xc00009c28d?, {0x868360, 0xc0000d42a0}, 0xc000258000)
 	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc0000a8330?}, {0x866d20, 0xc0000bc0e0}, 0xc0000de000)
+net/http.serverHandler.ServeHTTP({0xc0000a9ef0?}, {0x868360, 0xc0000d42a0}, 0xc000258000)
 	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4140, {0x867038, 0xc0000a8240})
+net/http.(*conn).serve(0xc0000b4140, {0x868678, 0xc0000a9e00})
 	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3071 +0x4db
 
-1 +0x4db
+ERROR	2023/01/26 22:59:09 helpers.go:11: the template named 'showSnippet.page.tmpl' does not exist
+goroutine 24 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000b8280, {0x868360, 0xc0000d4380}, {0x865d80?, 0xc00020e3f0?})
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:10 +0x66
+main.(*application).render(0xc0000b8280, {0x868360?, 0xc0000d4380}, 0x2?, {0x7d1ec8, 0x15}, 0x0?)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:26 +0x125
+main.(*application).showSnippet(0xc0000b8280, {0x868360, 0xc0000d4380}, 0xc0001a2000)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:39 +0x18e
+net/http.HandlerFunc.ServeHTTP(0x7f1813265db8?, {0x868360?, 0xc0000d4380?}, 0x40ef45?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009c2cd?, {0x868360, 0xc0000d4380}, 0xc0001a2000)
+	/usr/local/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000a9ef0?}, {0x868360, 0xc0000d4380}, 0xc0001a2000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000b4140, {0x868678, 0xc0000a9e00})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
 
+tp/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001a7a40?}, {0x8670e0, 0xc0001e8000}, 0xc0001be200)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000188280, {0x8673f8, 0xc00009b890})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
 
-
+ERROR	2023/01/26 21:52:21 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)

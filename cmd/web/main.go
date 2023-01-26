@@ -9,12 +9,14 @@ import (
 	"net/http"
 	"os"
 	"snippetbox/pkg/models/postgresql"
+	"html/template"
 )
 
 type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
 	snippets *postgresql.SnippetModel
+	templateCache map[string]*template.Template
 }
 
 const (
@@ -45,10 +47,16 @@ func main() {
 	}
 	defer db.Close()
 
+	templateCache,err := newTemplateCache("./ui/html")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	app := &application{
 		errorLog: errorLog,
 		infoLog:  infoLog,
 		snippets : &postgresql.SnippetModel{DB: db},
+		templateCache: templateCache,
 	}
 
 	srv := &http.Server{
