@@ -1,62 +1,43 @@
-ERROR	2023/01/28 17:54:23 server.go:3195: http: TLS handshake error from 127.0.0.1:49504: remote error: tls: bad certificate
-ERROR	2023/01/28 17:55:03 server.go:3195: http: TLS handshake error from 127.0.0.1:39154: remote error: tls: bad certificate
-ERROR	2023/01/28 17:57:57 server.go:3195: http: TLS handshake error from 127.0.0.1:45292: local error: tls: bad record MAC
-0x869c80?, 0xc0001e0000?})
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).createSnippet(0xc00006aea0, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:58 +0x27a
-net/http.HandlerFunc.ServeHTTP(0xc0001b6030?, {0x86c1e0?, 0xc000190380?}, 0x4?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP(0xc00000e828, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
-	/home/celal/go/pkg/mod/github.com/bmizerany/pat@v0.0.0-20210406213842-e4b6760bdd6f/mux.go:117 +0x1ae
-main.secureHeaders.func1({0x86c1e0, 0xc000190380}, 0x4?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x86c1e0?, 0xc000190380?}, 0xc000129998?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x86c1e0, 0xc000190380}, 0xc0000c2200)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1e0?, 0xc000190380?}, 0xffffffffffffffff?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x86c1e0?, 0xc000190380?}, 0xc000013cb0?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1e0?, 0xc000190380?}, 0x40ef45?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0x86b478?}, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001192c0, {0x86c4f8, 0xc0001b6300})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-
-rror at or near "$3"
-ERROR	2023/01/28 02:19:42 helpers.go:13: pq: syntax error at or near "$3"
-goroutine 27 [running]:
+ERROR	2023/01/28 21:13:34 helpers.go:13: runtime error: invalid memory address or nil pointer dereference
+goroutine 54 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0002283e0, {0x86c1c0, 0xc000252460}, {0x869c60?, 0xc00024de60?})
+main.(*application).serverError(0xc0000e4cc0, {0x8a4fa0, 0xc0002c80b8}, {0x8a29a0?, 0xc00028a990?})
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).createSnippet(0xc0002283e0, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:58 +0x27a
-net/http.HandlerFunc.ServeHTTP(0xc00024e990?, {0x86c1c0?, 0xc000252460?}, 0x4?)
+main.(*application).recoverPanic.func1.1()
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:28 +0x157
+panic({0x7a68c0, 0xacf3f0})
+	/usr/local/go/src/runtime/panic.go:838 +0x207
+snippetbox/pkg/models/postgresql.(*UserModel).Insert(0xc0000b62d8, {0xc0002e2018, 0x0}, {0xc0002e201e, 0x0}, {0xc0002e2025?, 0xc0001e4840?})
+	/home/celal/VsCode/Golang/snippetbox/pkg/models/postgresql/users.go:25 +0x181
+main.(*application).signupUser(0xc0000e4cc0, {0x8a4d90, 0xc000300200}, 0xc0001fc300)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:94 +0x393
+net/http.HandlerFunc.ServeHTTP(0xc0002a6400?, {0x8a4d90?, 0xc000300200?}, 0x0?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP(0xc000212600, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
+github.com/golangcollege/sessions.(*Session).Enable.func1({0x8a4fa0, 0xc0002c80b8}, 0xc0002a6400)
+	/home/celal/go/pkg/mod/github.com/golangcollege/sessions@v1.2.0/session.go:155 +0x169
+net/http.HandlerFunc.ServeHTTP(0xc0000e4f30?, {0x8a4fa0?, 0xc0002c80b8?}, 0x4?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP(0xc0000a2990, {0x8a4fa0, 0xc0002c80b8}, 0xc0002a6400)
 	/home/celal/go/pkg/mod/github.com/bmizerany/pat@v0.0.0-20210406213842-e4b6760bdd6f/mux.go:117 +0x1ae
-main.secureHeaders.func1({0x86c1c0, 0xc000252460}, 0x4?)
+main.secureHeaders.func1({0x8a4fa0, 0xc0002c80b8}, 0x4?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x86c1c0?, 0xc000252460?}, 0xc000129998?)
+net/http.HandlerFunc.ServeHTTP(0xc00007e1e0?, {0x8a4fa0?, 0xc0002c80b8?}, 0xc000060b98?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x86c1c0, 0xc000252460}, 0xc0001a8100)
+main.(*application).logRequest.func1({0x8a4fa0, 0xc0002c80b8}, 0xc0002a6400)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1c0?, 0xc000252460?}, 0xffffffffffffffff?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x8a4fa0?, 0xc0002c80b8?}, 0xffffffffffffffff?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x86c1c0?, 0xc000252460?}, 0xc0002151e0?)
+main.(*application).recoverPanic.func1({0x8a4fa0?, 0xc0002c80b8?}, 0x0?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1c0?, 0xc000252460?}, 0x40ef45?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x8a4fa0?, 0xc0002c80b8?}, 0x0?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0x86b458?}, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
+net/http.serverHandler.ServeHTTP({0x0?}, {0x8a4fa0, 0xc0002c80b8}, 0xc0002a6400)
 	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000224140, {0x86c4d8, 0xc00024ec60})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
+net/http.initALPNRequest.ServeHTTP({{0x8a5348?, 0xc0000e5530?}, 0xc000224000?, {0xc0000ee000?}}, {0x8a4fa0, 0xc0002c80b8}, 0xc0002a6400)
+	/usr/local/go/src/net/http/server.go:3523 +0x245
+net/http.(*http2serverConn).runHandler(0xc00008e6c0?, 0xc00004bfd0?, 0x716c66?, 0xc0000b06c0?)
+	/usr/local/go/src/net/http/h2_bundle.go:5903 +0x78
+created by net/http.(*http2serverConn).processHeaders
+	/usr/local/go/src/net/http/h2_bundle.go:5633 +0x59b
 

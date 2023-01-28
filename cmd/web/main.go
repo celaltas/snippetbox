@@ -19,6 +19,7 @@ type application struct {
 	errorLog      *log.Logger
 	infoLog       *log.Logger
 	snippets      *postgresql.SnippetModel
+	users         *postgresql.UserModel
 	templateCache map[string]*template.Template
 	session       *sessions.Session
 }
@@ -65,6 +66,7 @@ func main() {
 		infoLog:       infoLog,
 		session:       session,
 		snippets:      &postgresql.SnippetModel{DB: db},
+		users:         &postgresql.UserModel{DB: db},
 		templateCache: templateCache,
 	}
 
