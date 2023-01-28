@@ -1,9 +1,7 @@
-ERROR	2023/01/28 02:30:57 handlers.go:57: pq: invalid input syntax for type double precision: "7 DAY"
-ERROR	2023/01/28 02:30:57 helpers.go:13: pq: invalid input syntax for type double precision: "7 DAY"
-goroutine 19 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00006aea0, {0x86c1e0, 0xc000190380}, {0x869c80?, 0xc0001e0000?})
+ERROR	2023/01/28 17:54:23 server.go:3195: http: TLS handshake error from 127.0.0.1:49504: remote error: tls: bad certificate
+ERROR	2023/01/28 17:55:03 server.go:3195: http: TLS handshake error from 127.0.0.1:39154: remote error: tls: bad certificate
+ERROR	2023/01/28 17:57:57 server.go:3195: http: TLS handshake error from 127.0.0.1:45292: local error: tls: bad record MAC
+0x869c80?, 0xc0001e0000?})
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
 main.(*application).createSnippet(0xc00006aea0, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:58 +0x27a

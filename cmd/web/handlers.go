@@ -33,7 +33,9 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 		return
 	}
-	app.render(w, r, "show.page.tmpl", &templateData{Snippet: s})
+	app.render(w, r, "show.page.tmpl", &templateData{
+		Snippet: s,
+	})
 }
 
 func (app *application) createSnippetForm(w http.ResponseWriter, r *http.Request) {
@@ -49,15 +51,13 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 		app.clienError(w, http.StatusBadRequest)
 	}
 
-
 	form := forms.New(r.PostForm)
-	form.Required("title", "content","expires")
+	form.Required("title", "content", "expires")
 	form.MaxLength("content", 100)
-	form.PermittedValues("expires", "365","7","1")
-
+	form.PermittedValues("expires", "365", "7", "1")
 
 	if !form.Valid() {
-		app.render(w,r, "create.page.tmpl", &templateData{
+		app.render(w, r, "create.page.tmpl", &templateData{
 			Form: form,
 		})
 		return
@@ -69,5 +69,6 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 		return
 	}
+	app.session.Put(r, "flash", "Snippet succesfully created!")
 	http.Redirect(w, r, fmt.Sprintf("/snippet/%d", id), http.StatusSeeOther)
 }
