@@ -1,139 +1,63 @@
-ERROR	2023/01/27 01:56:56 helpers.go:13: oops! something went wrong
-goroutine 15 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00006ae00, {0x869760, 0xc0000b8000}, {0x867180?, 0xc000098090?})
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).recoverPanic.func1.1()
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:28 +0x157
-panic({0x75f1e0, 0x866000})
-	/usr/local/go/src/runtime/panic.go:838 +0x207
-main.(*application).home(0x40ef45?, {0x869760, 0xc0000b8000}, 0xc0000bc000?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:15 +0x88
-net/http.HandlerFunc.ServeHTTP(0xfc0000c000098070?, {0x869760?, 0xc0000b8000?}, 0xc00011f8a0?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x7a0c80?, {0x869760, 0xc0000b8000}, 0xc0000a8000)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-main.secureHeaders.func1({0x869760, 0xc0000b8000}, 0x4?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x869760?, 0xc0000b8000?}, 0xc00011f998?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x869760, 0xc0000b8000}, 0xc0000a8000)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0000b8000?}, 0xffffffffffffffff?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x869760?, 0xc0000b8000?}, 0x4bed40?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0000b8000?}, 0xa8b720?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0xc000094030?}, {0x869760, 0xc0000b8000}, 0xc0000a8000)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000119220, {0x869a78, 0xc0001a7740})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-
-ERROR	2023/01/27 01:57:08 helpers.go:13: oops! something went wrong
+ERROR	2023/01/28 02:30:57 handlers.go:57: pq: invalid input syntax for type double precision: "7 DAY"
+ERROR	2023/01/28 02:30:57 helpers.go:13: pq: invalid input syntax for type double precision: "7 DAY"
 goroutine 19 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00006ae00, {0x869760, 0xc0000b80e0}, {0x867180?, 0xc000098180?})
+main.(*application).serverError(0xc00006aea0, {0x86c1e0, 0xc000190380}, {0x869c80?, 0xc0001e0000?})
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).recoverPanic.func1.1()
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:28 +0x157
-panic({0x75f1e0, 0x866000})
-	/usr/local/go/src/runtime/panic.go:838 +0x207
-main.(*application).home(0x40ef45?, {0x869760, 0xc0000b80e0}, 0xc0000bc420?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:15 +0x88
-net/http.HandlerFunc.ServeHTTP(0x7b0000c000098160?, {0x869760?, 0xc0000b80e0?}, 0xc00011f8a0?)
+main.(*application).createSnippet(0xc00006aea0, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:58 +0x27a
+net/http.HandlerFunc.ServeHTTP(0xc0001b6030?, {0x86c1e0?, 0xc000190380?}, 0x4?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x7a0c80?, {0x869760, 0xc0000b80e0}, 0xc0000a8100)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-main.secureHeaders.func1({0x869760, 0xc0000b80e0}, 0x4?)
+github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP(0xc00000e828, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
+	/home/celal/go/pkg/mod/github.com/bmizerany/pat@v0.0.0-20210406213842-e4b6760bdd6f/mux.go:117 +0x1ae
+main.secureHeaders.func1({0x86c1e0, 0xc000190380}, 0x4?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x869760?, 0xc0000b80e0?}, 0xc00005b998?)
+net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x86c1e0?, 0xc000190380?}, 0xc000129998?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x869760, 0xc0000b80e0}, 0xc0000a8100)
+main.(*application).logRequest.func1({0x86c1e0, 0xc000190380}, 0xc0000c2200)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0000b80e0?}, 0xffffffffffffffff?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1e0?, 0xc000190380?}, 0xffffffffffffffff?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x869760?, 0xc0000b80e0?}, 0x4bed40?)
+main.(*application).recoverPanic.func1({0x86c1e0?, 0xc000190380?}, 0xc000013cb0?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0000b80e0?}, 0xc000050800?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1e0?, 0xc000190380?}, 0x40ef45?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0xc000094210?}, {0x869760, 0xc0000b80e0}, 0xc0000a8100)
+net/http.serverHandler.ServeHTTP({0x86b478?}, {0x86c1e0, 0xc000190380}, 0xc0000c2200)
 	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000ce000, {0x869a78, 0xc0001a7740})
+net/http.(*conn).serve(0xc0001192c0, {0x86c4f8, 0xc0001b6300})
 	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3071 +0x4db
 
-ERROR	2023/01/27 01:57:22 helpers.go:13: oops! something went wrong
-goroutine 21 [running]:
+rror at or near "$3"
+ERROR	2023/01/28 02:19:42 helpers.go:13: pq: syntax error at or near "$3"
+goroutine 27 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00006ae00, {0x869760, 0xc00021e000}, {0x867180?, 0xc00020e090?})
+main.(*application).serverError(0xc0002283e0, {0x86c1c0, 0xc000252460}, {0x869c60?, 0xc00024de60?})
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).recoverPanic.func1.1()
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:28 +0x157
-panic({0x75f1e0, 0x866000})
-	/usr/local/go/src/runtime/panic.go:838 +0x207
-main.(*application).home(0x40ef45?, {0x869760, 0xc00021e000}, 0xc000218160?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:15 +0x88
-net/http.HandlerFunc.ServeHTTP(0x9c0000c00020e070?, {0x869760?, 0xc00021e000?}, 0xc00022b8a0?)
+main.(*application).createSnippet(0xc0002283e0, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
+	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:58 +0x27a
+net/http.HandlerFunc.ServeHTTP(0xc00024e990?, {0x86c1c0?, 0xc000252460?}, 0x4?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x7a0c80?, {0x869760, 0xc00021e000}, 0xc000214000)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-main.secureHeaders.func1({0x869760, 0xc00021e000}, 0x4?)
+github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP(0xc000212600, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
+	/home/celal/go/pkg/mod/github.com/bmizerany/pat@v0.0.0-20210406213842-e4b6760bdd6f/mux.go:117 +0x1ae
+main.secureHeaders.func1({0x86c1c0, 0xc000252460}, 0x4?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x869760?, 0xc00021e000?}, 0xc000204998?)
+net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x86c1c0?, 0xc000252460?}, 0xc000129998?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x869760, 0xc00021e000}, 0xc000214000)
+main.(*application).logRequest.func1({0x86c1c0, 0xc000252460}, 0xc0001a8100)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc00021e000?}, 0xffffffffffffffff?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1c0?, 0xc000252460?}, 0xffffffffffffffff?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x869760?, 0xc00021e000?}, 0x4bed40?)
+main.(*application).recoverPanic.func1({0x86c1c0?, 0xc000252460?}, 0xc0002151e0?)
 	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc00021e000?}, 0xc000050800?)
+net/http.HandlerFunc.ServeHTTP(0x0?, {0x86c1c0?, 0xc000252460?}, 0x40ef45?)
 	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0xc00020a030?}, {0x869760, 0xc00021e000}, 0xc000214000)
+net/http.serverHandler.ServeHTTP({0x86b458?}, {0x86c1c0, 0xc000252460}, 0xc0001a8100)
 	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000ce0a0, {0x869a78, 0xc0001a7740})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-
-ERROR	2023/01/27 01:57:43 helpers.go:13: oops! something went wrong
-goroutine 35 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00006ae00, {0x869760, 0xc0001902a0}, {0x867180?, 0xc000013710?})
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/helpers.go:12 +0x66
-main.(*application).recoverPanic.func1.1()
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:28 +0x157
-panic({0x75f1e0, 0x866000})
-	/usr/local/go/src/runtime/panic.go:838 +0x207
-main.(*application).home(0x40ef45?, {0x869760, 0xc0001902a0}, 0xc00014ac60?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/handlers.go:15 +0x88
-net/http.HandlerFunc.ServeHTTP(0x8b0000c0000136f0?, {0x869760?, 0xc0001902a0?}, 0xc0001298a0?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x7a0c80?, {0x869760, 0xc0001902a0}, 0xc000214200)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-main.secureHeaders.func1({0x869760, 0xc0001902a0}, 0x4?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:12 +0x19b
-net/http.HandlerFunc.ServeHTTP(0xc00007e190?, {0x869760?, 0xc0001902a0?}, 0xc000129998?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).logRequest.func1({0x869760, 0xc0001902a0}, 0xc000214200)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:18 +0x158
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0001902a0?}, 0xffffffffffffffff?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-main.(*application).recoverPanic.func1({0x869760?, 0xc0001902a0?}, 0x4bed40?)
-	/home/celal/VsCode/Golang/snippetbox/cmd/web/middleware.go:31 +0x93
-net/http.HandlerFunc.ServeHTTP(0x0?, {0x869760?, 0xc0001902a0?}, 0xa8b720?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.serverHandler.ServeHTTP({0xc00020a1e0?}, {0x869760, 0xc0001902a0}, 0xc000214200)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc00023e000, {0x869a78, 0xc0001a7740})
+net/http.(*conn).serve(0xc000224140, {0x86c4d8, 0xc00024ec60})
 	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3071 +0x4db
