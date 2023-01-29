@@ -15,7 +15,8 @@ import (
 	"time"
 )
 
-
+type contextKey string
+var contextKeyUser = contextKey("user")
 
 
 
